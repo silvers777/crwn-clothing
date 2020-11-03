@@ -12,6 +12,8 @@ const config = {
   appId: '1:646111939869:web:0e640d180d22d3fc39e5f4'
 }
 
+firebase.initializeApp(config)
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return
 
@@ -37,8 +39,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   return userRef
 }
-
-firebase.initializeApp(config)
 
 export const addCollectionAndDocuments = async (
   collectionKey,
